@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 //
-// $ openssl genrsa > signer.key
+// $ openssl genrsa 1024 > signer.key
 // $ openssl rsa -pubout < signer.key > signer.pub
 //
 
