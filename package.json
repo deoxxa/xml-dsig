@@ -1,0 +1,23 @@
+{
+  "name": "xml-dsig",
+  "version": "0.0.0",
+  "description": "XML digital signatures",
+  "main": "./lib/dsig.js",
+  "dependencies": {
+    "xmldom": "~0.1.15",
+    "xml-c14n": "~0.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/deoxxa/xml-dsig.git"
+  },
+  "keywords": [
+    "xml",
+    "signature",
+    "signing",
+    "verification",
+    "dsig"
+  ],
+  "author": "Conrad Pankoff <deoxxa@fknsrs.biz> (http://www.fknsrs.biz/)",
+  "license": "BSD"
+}
