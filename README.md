@@ -61,6 +61,8 @@ console.log("");
 
 <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><DigestValue>7CHcwH1bPS0AQ0mk/Js5PZv4nn1hiODMoG1iwa9kKRo=</DigestValue></Reference><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/></SignedInfo><SignatureValue>UzjDCBHby6jvY/ZhyJCfz41l062uidQpI7VYTTF+Uix47zLiKFAPYVT6ICeZ5d8yYVEKWi5AydkStlj3OruwHupZdx27vy+EXRZM5If7xCWDCXuyf+vV3la9qkSk1CceLeDbwsz4dpIp08h+AkfJipPlMXuYhoqjj2bzjdqroh8=</SignatureValue></Signature>
 
+<docs><doc id="doc-1"/><doc id="doc-2"/><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><DigestValue>7CHcwH1bPS0AQ0mk/Js5PZv4nn1hiODMoG1iwa9kKRo=</DigestValue></Reference><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/></SignedInfo><SignatureValue>S2Qt11e4wO5fJy41BMFS0YF2fiCSfF08WioXhgXRfp26QqDnTvCi5vIijFnbI/fFnqn01eOOGj3IDm26YMHfXoP6NSo6zECkj4OJDLxheuPvMJi5NRxSRRdGH2LeQ3qVRcPtxmz2+djdCQPM6YG7UAP2MKao0U7vydYwdIqGM7g=</SignatureValue></Signature></docs>
+
 true
 ```
 

@@ -22,7 +22,8 @@ var options = {
 
 var node = doc.documentElement;
 
-var signature = dsig.createSignature(node, options);
+var signature = dsig.createSignature(node, options),
+    enveloped = dsig.insertEnvelopedSignature(node, options);
 
 console.log("");
 
@@ -30,6 +31,9 @@ console.log(node.toString());
 console.log("");
 
 console.log(signature.toString());
+console.log("");
+
+console.log(enveloped.toString());
 console.log("");
 
 console.log(dsig.verifySignature(node, signature, options));
