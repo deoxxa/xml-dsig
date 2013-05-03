@@ -13,22 +13,24 @@ var dsig = require("./");
 var xml = '<docs><doc id="doc-1"/><doc id="doc-2"/></docs>',
     doc = (new xmldom.DOMParser()).parseFromString(xml);
 
-var node = doc.documentElement;
-
-var signed = dsig.createSignature(node, {
+var options = {
   signatureOptions: {
     privateKey: fs.readFileSync("./signer.key"),
     publicKey: fs.readFileSync("./signer.pub"),
   }
-});
+};
+
+var node = doc.documentElement;
+
+var signature = dsig.createSignature(node, options);
 
 console.log("");
 
 console.log(node.toString());
 console.log("");
 
-console.log(signed.toString());
+console.log(signature.toString());
 console.log("");
 
-console.log(dsig.canonicalisations["http://www.w3.org/2001/10/xml-exc-c14n#"].canonicalise(signed));
+console.log(dsig.verifySignature(node, signature, options));
 console.log("");
