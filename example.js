@@ -10,7 +10,7 @@ var fs = require("fs"),
 
 var dsig = require("./");
 
-var xml = "<x/>",
+var xml = '<docs><doc id="doc-1"/><doc id="doc-2"/></docs>',
     doc = (new xmldom.DOMParser()).parseFromString(xml);
 
 var node = doc.documentElement;
