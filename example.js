@@ -8,33 +8,30 @@
 var fs = require("fs"),
     xmldom = require("xmldom");
 
-var dsig = require("./");
+var dsig = require("./")();
 
-var xml = '<docs><doc id="doc-1"/><doc id="doc-2"/></docs>',
-    doc = (new xmldom.DOMParser()).parseFromString(xml);
+var xmlData = fs.readFileSync(process.argv[2] || "./doc.xml", "utf8"),
+    xmlDocument = (new xmldom.DOMParser()).parseFromString(xmlData);
+
+var privateKey = fs.readFileSync("./signer.key"),
+    publicKey = fs.readFileSync("./signer.pub");
 
 var options = {
-  signatureOptions: {
-    privateKey: fs.readFileSync("./signer.key"),
-    publicKey: fs.readFileSync("./signer.pub"),
-  }
+  signatureMethod: dsig.createSignatureMethod("http://www.w3.org/2001/04/xmldsig-more#rsa-sha256", {
+    keyInfo: {
+      privateKey: privateKey,
+      publicKey: publicKey,
+    },
+  }),
 };
 
-var node = doc.documentElement;
+dsig.signAndInsert(xmlDocument.documentElement, options, function(err, signature) {
+  if (err) {
+    return console.warn(err.stack);
+  }
 
-var signature = dsig.createSignature(node, options),
-    enveloped = dsig.insertEnvelopedSignature(node, options);
-
-console.log("");
-
-console.log(node.toString());
-console.log("");
-
-console.log(signature.toString());
-console.log("");
-
-console.log(enveloped.toString());
-console.log("");
-
-console.log(dsig.verifySignature(node, signature, options));
-console.log("");
+  console.log("document\n========\n");
+  console.log(xmlDocument + "\n");
+  console.log("signature\n=========\n");
+  console.log(signature + "\n");
+});

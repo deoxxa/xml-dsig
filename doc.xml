@@ -1,0 +1,7 @@
+<!-- leading comment -->
+<root>
+  <!-- internal comment -->
+  <a>hello, i am a thing</a>
+  <b>oh look, another thing</b>
+</root>
+<!-- trailing comment -->
