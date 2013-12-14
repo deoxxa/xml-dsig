@@ -5,7 +5,7 @@
   "main": "./lib/dsig.js",
   "dependencies": {
     "xmldom": "~0.1.15",
-    "xml-c14n": "0.0.5",
+    "xml-c14n": "0.0.6",
     "xpath": "0.0.5",
     "async": "~0.2.9",
     "request": "~2.27.0",
