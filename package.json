@@ -8,7 +8,6 @@
     "xml-c14n": "0.0.6",
     "xpath": "0.0.5",
     "async": "~0.2.9",
-    "request": "~2.27.0",
     "proquint-random-id": "0.0.1"
   },
   "repository": {
